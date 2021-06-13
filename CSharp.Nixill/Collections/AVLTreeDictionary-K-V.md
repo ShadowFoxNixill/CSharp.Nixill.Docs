@@ -30,6 +30,7 @@ This is an implementation of `IDictionary<K, V>` backed by an AVL tree.
   - [`ContainsKey(K)`](#containskeyk)
   - [`ContainsLower(K)`](#containslowerk)
   - [`CopyTo(KeyValuePair<K, V>[], int)`](#copytokeyvaluepairk-v-int)
+  - [`EntriesAround(K)`](#entriesaroundk)
   - [`FloorEntry(K)`](#floorentryk)
   - [`FloorKey(K)`](#floorkeyk)
   - [`GetEnumerator()`](#getenumerator)
@@ -38,6 +39,7 @@ This is an implementation of `IDictionary<K, V>` backed by an AVL tree.
   - [`HighestEntry()`](#highestentry)
   - [`HighestKey()`](#highestkey)
   - [`IsEmpty()`](#isempty)
+  - [`KeysAround(K)`](#keysaroundk)
   - [`LowerEntry(K)`](#lowerentryk)
   - [`LowerKey(K)`](#lowerkeyk)
   - [`LowestEntry()`](#lowestentry)
@@ -59,7 +61,7 @@ This is an implementation of `IDictionary<K, V>` backed by an AVL tree.
 
 
 # Remarks
-Much of the code from this class comes from Costin S and was licensed under the MIT License. The original code is available [here](https://code.google.com/archive/p/self-balancing-avl-tree/). This class doesn't include the sections of code under the `TREE_WITH_PARENT_POINTERS` or `TREE_WITH_CONCAT_AND_SPLIT_OPERATIONS` defines.
+The `AVLTreeDictionary<K, V>` is backed by an `AVLTreeSet<K, V>` with a comparer that runs the given comparison function on two elements' keys, ignoring values.
 
 
 
@@ -278,6 +280,17 @@ This method returns `true` iff an entry matches in *both* key and value. To chec
 * **`NullReferenceException`**: `array` is `null`.
 
 
+## `EntriesAround(K)`
+`NodeTriplet<KeyValuePair<K, V>>` - Returns a `NodeTriplet` with the following entries, if they exist:
+
+* The highest key less than the given value.
+* The key equal to the given value.
+* The lowest key greater than the given value.
+
+### Parameters
+* `K` **`from`**: The value to test.
+
+
 ## `FloorEntry(K)`
 `KeyValuePair<K, V>` - Gets the entry with the highest key less than or equal to a given value.
 
@@ -346,6 +359,17 @@ This method returns `true` iff an entry matches in *both* key and value. To chec
 
 ## `IsEmpty()`
 `bool` - Returns whether or not the `AVLTreeDictionary<K, V>` is empty.
+
+
+## `KeysAround(K)`
+`NodeTriplet<K>` - Returns a `NodeTriplet` with the following keys, if they exist:
+
+* The highest key less than the given value.
+* The key equal to the given value.
+* The lowest key greater than the given value.
+
+### Parameters
+* `K` **`from`**: The value to test.
 
 
 ## `LowerEntry(K)`
