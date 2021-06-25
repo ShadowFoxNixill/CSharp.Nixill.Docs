@@ -26,6 +26,7 @@ A GTFS feed table whose members are sequential elements to some entity.
   - [`ContainsHigher((string, int))`](#containshigherstring-int)
   - [`ContainsLower((string, int))`](#containslowerstring-int)
   - [`GetEnumerator()`](#getenumerator)
+  - [`GetUnparsed()`](#getunparsed)
 - [Explicit Interface Implementations](#explicit-interface-implementations)
   - [`IEnumerable.GetEnumerator()`](#ienumerablegetenumerator)
 
@@ -145,8 +146,13 @@ More specifically, this returns `true` iff the collection has any elements with 
 `IEnumerator<T>`: Returns an enumerator that iterates through a collection.
 
 
+## `GetUnparsed()`
+`IReadOnlyCollection<GTFSUnparsedEntity>`: Returns a read-only view of entities that couldn't be parsed.
+
+
 
 # Explicit Interface Implementations
+
 
 ## `IEnumerable.GetEnumerator()`
 `IEnumerator`: Returns an enumerator that iterates through a collection.

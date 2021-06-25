@@ -70,5 +70,6 @@ Read-only `(Calendar, IEnumerable<CalendarDate>)`: Returns both the `Calendar` (
 
 # Explicit Interface Implementations
 
+
 ## `IEnumerable.GetEnumerator()`
 `IEnumerator`: Returns an enumerator that iterates through a collection.
