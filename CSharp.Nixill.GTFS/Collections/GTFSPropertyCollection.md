@@ -37,7 +37,7 @@ Creates a new `GTFSPropertyCollection` from a dictionary of keys and values.
 
 ### Parameters
 * `IDictionary<string, string>` **`input`**: The dictionary to use.
-* `string` **`agencyId`** (default `null`): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
+* `string` **`agencyID`** (default `null`): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
 
 
 ## `GTFSPropertyCollection(IEnumerable<(string, string)>, string)`
@@ -45,7 +45,7 @@ Creates a new `GTFSPropertyCollection` from an enumerable set of two-string tupl
 
 ### Parameters
 * `IEnumerable<(string, string)>` **`input`**: The keys and values to use.
-* `string` **`agencyId`** (default `null`): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
+* `string` **`agencyID`** (default `null`): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
 
 
 

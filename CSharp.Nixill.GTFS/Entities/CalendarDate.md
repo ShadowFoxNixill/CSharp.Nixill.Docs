@@ -13,7 +13,7 @@ Represents a single exception to a `Calendar`'s defined service days.
   - [`IsAdded`](#isadded)
   - [`IsRemoved`](#isremoved)
   - [`SecondKey`](#secondkey)
-  - [`ServiceId`](#serviceid)
+  - [`ServiceID`](#serviceid)
   - [`this[string]`](#thisstring)
   - [`Properties` (protected)](#properties-protected)
 - [Methods](#methods)
@@ -43,13 +43,13 @@ This is the value of the `service_id` property of the entity.
 
 
 ## `IsAdded`
-Read-only `bool`: Whether or not this record adds service to `ServiceId` on `Date`.
+Read-only `bool`: Whether or not this record adds service to `ServiceID` on `Date`.
 
 This is whether or not the `exception_type` property equals `1`.
 
 
 ## `IsRemoved`
-Read-only `bool`: Whether or not this record removes service from `ServiceId` on `Date`.
+Read-only `bool`: Whether or not this record removes service from `ServiceID` on `Date`.
 
 This is whether or not the `exception_type` property equals `2`.
 
@@ -60,7 +60,7 @@ Read-only `LocalDate`: The second key of the entity.
 This is the value of the `date` property of the entity.
 
 
-## `ServiceId`
+## `ServiceID`
 Read-only `string`: Identifies the set of dates to which this record adds an exception.
 
 This is the value of the `service_id` property of the entity, and is its `FirstKey`.

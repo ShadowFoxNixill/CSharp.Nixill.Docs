@@ -11,18 +11,18 @@ A key location in a GTFS feed, such as a transit stop, station or station entran
   - [`Description`](#description)
   - [`ID`](#id)
   - [`Latitude`](#latitude)
-  - [`LevelId`](#levelid)
+  - [`LevelID`](#levelid)
   - [`LocationType`](#locationtype)
   - [`Longitude`](#longitude)
   - [`Name`](#name)
-  - [`ParentStationId`](#parentstationid)
+  - [`ParentStationID`](#parentstationid)
   - [`PlatformCode`](#platformcode)
   - [`StopCode`](#stopcode)
   - [`StopUrl`](#stopurl)
   - [`this[string]`](#thisstring)
   - [`TimeZone`](#timezone)
   - [`WheelchairBoarding`](#wheelchairboarding)
-  - [`ZoneId`](#zoneid)
+  - [`ZoneID`](#zoneid)
   - [`Properties` (protected)](#properties-protected)
 - [Methods](#methods)
   - [`Factory(IEnumerable<(string, string)>)` (static)](#factoryienumerablestring-string-static)
@@ -55,7 +55,7 @@ Read-only `double?`: The latitude of the location.
 This is the value of the `stop_lat` property of the entity. It is not required on `StopLocationType.GenericNode`s or `StopLocationType.BoardingArea`s.
 
 
-## `LevelId`
+## `LevelID`
 Read-only `string`: Level of the location.
 
 This is the value of `level_id` property of the entity. The same level can be used by multiple unlinked stations.
@@ -81,7 +81,7 @@ This is the value of the `stop_name` property of the entity. It should be a name
 When the location is a boarding area (`LocationType == StopLocationType.BoardingArea`), the `Name` should contains the name of the boarding area as displayed by the agency. It could be just one letter (like on some European intercity railway stations), or text like “Wheelchair boarding area” (NYC’s Subway) or “Head of short trains” (Paris’ RER).
 
 
-## `ParentStationId`
+## `ParentStationID`
 Read-only `string`: Defines hierarchy between the different locations.
 
 This is the value of the `parent_station` property of the entity. It contains the ID of the parent location, as follows:
@@ -128,10 +128,10 @@ Read-only `Tristate`: Indicates whether wheelchair boardings are possible from t
 This is the value of the `wheelchair_boarding` property of the entity, and defaults to `Tristate.Unknown`.
 
 
-## `ZoneId`
+## `ZoneID`
 Read-only `string`: Identifies the fare zone for a stop.
 
-This is the value of the `zone_id` property of the entity. This field is required if providing fare information using `FareRule`s, otherwise it is optional. If this record represents a station or station entrance, the `ZoneId` is ignored.
+This is the value of the `zone_id` property of the entity. This field is required if providing fare information using `FareRule`s, otherwise it is optional. If this record represents a station or station entrance, the `ZoneID` is ignored.
 
 
 ## `Properties` (protected)
