@@ -10,7 +10,7 @@ An `IGTFSDataSource` using a zip archive as its backend.
   - [`ZipGTFSDataSource(ZipArchive)`](#zipgtfsdatasourceziparchive)
   - [`ZipGTFSDataSource(string)`](#zipgtfsdatasourcestring)
 - [Methods](#methods)
-  - [`GetObjects<T>(string, GTFSEntityFactory<T>, List<GTFSUnparsedEntity>)`](#getobjectststring-gtfsentityfactoryt-listgtfsunparsedentity)
+  - [`GetObjects<T>(string, GTFSEntityFactory<T>, [List<GTFSUnparsedEntity>])`](#getobjectststring-gtfsentityfactoryt-listgtfsunparsedentity)
 
 
 
@@ -35,7 +35,7 @@ Creates a `ZipGTFSDataSource` using a new `ZipArchive` object referring to `arch
 # Methods
 
 
-## `GetObjects<T>(string, GTFSEntityFactory<T>, List<GTFSUnparsedEntity>)`
+## `GetObjects<T>(string, GTFSEntityFactory<T>, [List<GTFSUnparsedEntity>])`
 `IEnumerable<T>`: Returns an enumerable collection of objects parsed from the given table in the data source.
 
 ### Type parameters
@@ -44,4 +44,4 @@ Creates a `ZipGTFSDataSource` using a new `ZipArchive` object referring to `arch
 ### Parameters
 * `string` **`table`**: The table being requested from the data source.
 * `GTFSEntityFactory<T>` **`factory`**: The method that turns properties into objects.
-* `List<GTFSUnparsedEntity>` **`unparsed`** (default `null`): If provided, a list where entities that throw an exceptio nduring parsing are stored. If not provided, any generated exceptions are thrown.
+* `List<GTFSUnparsedEntity>` **`unparsed`** (optional): If provided, a list where entities that throw an exceptio nduring parsing are stored. If not provided, any generated exceptions are thrown.

@@ -14,9 +14,9 @@ Utility class to convert string values to other data types.
   - [`TimeRegex`](#timeregex)
 - [Methods (static)](#methods-static)
   - [`GetBool(string)`](#getboolstring)
-  - [`GetColor(string, Color?)`](#getcolorstring-color)
-  - [`GetDate(string, LocalDate?)`](#getdatestring-localdate)
-  - [`GetDuration(string, Duration?)`](#getdurationstring-duration)
+  - [`GetColor(string, [Color?])`](#getcolorstring-color)
+  - [`GetDate(string, [LocalDate?])`](#getdatestring-localdate)
+  - [`GetDuration(string, [Duration?])`](#getdurationstring-duration)
   - [`GetNullableBool(string)`](#getnullableboolstring)
   - [`GetNullableColor(string)`](#getnullablecolorstring)
   - [`GetNullableDate(string)`](#getnullabledatestring)
@@ -28,7 +28,7 @@ Utility class to convert string values to other data types.
   - [`GetNullableNonNegativeDouble(string)`](#getnullablenonnegativedoublestring)
   - [`GetNullableNonNegativeInt(string)`](#getnullablenonnegativeintstring)
   - [`GetNullableTime(string)`](#getnullabletimestring)
-  - [`GetTime(string, Duration?)`](#gettimestring-duration)
+  - [`GetTime(string, [Duration?])`](#gettimestring-duration)
   - [`GetTimeZone(string)`](#gettimezonestring)
   - [`IsBool(string)`](#isboolstring)
   - [`IsColor(string)`](#iscolorstring)
@@ -43,12 +43,12 @@ Utility class to convert string values to other data types.
   - [`IsTime(string)`](#istimestring)
 - [Extension methods to `GTFSPropertyCollection`](#extension-methods-to-gtfspropertycollection)
   - [`GTFSPropertyCollection.GetBool(string)`](#gtfspropertycollectiongetboolstring)
-  - [`GTFSPropertyCollection.GetColor(string, Color?)`](#gtfspropertycollectiongetcolorstring-color)
-  - [`GTFSPropertyCollection.GetDate(string, LocalDate?)`](#gtfspropertycollectiongetdatestring-localdate)
-  - [`GTFSPropertyCollection.GetDecimal(string, decimal?)`](#gtfspropertycollectiongetdecimalstring-decimal)
-  - [`GTFSPropertyCollection.GetDouble(string, double?)`](#gtfspropertycollectiongetdoublestring-double)
-  - [`GTFSPropertyCollection.GetDuration(string, Duration?)`](#gtfspropertycollectiongetdurationstring-duration)
-  - [`GTFSPropertyCollection.GetInt(string, Int?)`](#gtfspropertycollectiongetintstring-int)
+  - [`GTFSPropertyCollection.GetColor(string, [Color?])`](#gtfspropertycollectiongetcolorstring-color)
+  - [`GTFSPropertyCollection.GetDate(string, [LocalDate?])`](#gtfspropertycollectiongetdatestring-localdate)
+  - [`GTFSPropertyCollection.GetDecimal(string, [decimal?])`](#gtfspropertycollectiongetdecimalstring-decimal)
+  - [`GTFSPropertyCollection.GetDouble(string, [double?])`](#gtfspropertycollectiongetdoublestring-double)
+  - [`GTFSPropertyCollection.GetDuration(string, [Duration?])`](#gtfspropertycollectiongetdurationstring-duration)
+  - [`GTFSPropertyCollection.GetInt(string, [int?])`](#gtfspropertycollectiongetintstring-int)
   - [`GTFSPropertyCollection.GetNullableBool(string)`](#gtfspropertycollectiongetnullableboolstring)
   - [`GTFSPropertyCollection.GetNullableColor(string)`](#gtfspropertycollectiongetnullablecolorstring)
   - [`GTFSPropertyCollection.GetNullableDate(string)`](#gtfspropertycollectiongetnullabledatestring)
@@ -60,7 +60,7 @@ Utility class to convert string values to other data types.
   - [`GTFSPropertyCollection.GetNullableNonNegativeDouble(string)`](#gtfspropertycollectiongetnullablenonnegativedoublestring)
   - [`GTFSPropertyCollection.GetNullableNonNegativeInt(string)`](#gtfspropertycollectiongetnullablenonnegativeintstring)
   - [`GTFSPropertyCollection.GetNullableTime(string)`](#gtfspropertycollectiongetnullabletimestring)
-  - [`GTFSPropertyCollection.GetTime(string, Duration?)`](#gtfspropertycollectiongettimestring-duration)
+  - [`GTFSPropertyCollection.GetTime(string, [Duration?])`](#gtfspropertycollectiongettimestring-duration)
   - [`GTFSPropertyCollection.GetTimeZone(string)`](#gtfspropertycollectiongettimezonestring)
   - [`GTFSPropertyCollection.IsBool(string)`](#gtfspropertycollectionisboolstring)
   - [`GTFSPropertyCollection.IsColor(string)`](#gtfspropertycollectioniscolorstring)
@@ -112,38 +112,38 @@ Returns `false` for any other input, even `null`.
 * `string` **`input`**: The input to check.
 
 
-## `GetColor(string, Color?)`
+## `GetColor(string, [Color?])`
 `Color`: Returns a `Color`.
 
 To be a valid color, the input must be a six-hex digit code, *without* the leading `#` sign.
 
 ### Parameters
 * `string` **`input`**: The input to parse.
-* `Color?` **`def`** (default `null`): Default to use if the input isn't a valid color.
+* `Color?` **`def`** (optional): Default to use if the input isn't a valid color.
 
 ### Exceptions
 * `ArgumentException`: `input` is not a valid color, and no default is provided.
 
 
-## `GetDate(string, LocalDate?)`
+## `GetDate(string, [LocalDate?])`
 `LocalDate`: Returns a `LocalDate`.
 
 To be a valid date, the input must be in `YYYYMMDD` format, with no separators between the components.
 
 ### Parameters
 * `string` **`input`**: The input to parse.
-* `LocalDate?` **`def`** (default `null`): Default to use if the input isn't a valid date.
+* `LocalDate?` **`def`** (optional): Default to use if the input isn't a valid date.
 
 ### Exceptions
 * `Exception`: `input` is not a valid date, and no default is provided.
 
 
-## `GetDuration(string, Duration?)`
+## `GetDuration(string, [Duration?])`
 `Duration`: Converts the input (as a duration given in integer seconds) to a `Duration`.
 
 ### Parameters
 * `string` **`input`**: The input to parse.
-* `Duration?` **`def`** (default `null`): Default to use if the input isn't a valid duration.
+* `Duration?` **`def`** (optional): Default to use if the input isn't a valid duration.
 
 ### Excceptions
 * `ArgumentException`: `input` is not a valid duration, and no default is provided.
@@ -234,14 +234,14 @@ To be a valid time, the input must be in `H:mm:ss` or `HH:mm:ss` format.
 * `string` **`input`**: The input to parse.
 
 
-## `GetTime(string, Duration?)`
+## `GetTime(string, [Duration?])`
 `Duration`: Returns a `Duration`.
 
 To be a valid time, the input must be in `H:mm:ss` or `HH:mm:ss` format.
 
 ### Parameters
 * `string` **`input`**: The input to parse.
-* `Duration?` **`def`** (default `null`): The default to use if the input isn't a valid time.
+* `Duration?` **`def`** (optional): The default to use if the input isn't a valid time.
 
 ### Exceptions
 * `Exception`: `input` is not a valid time.
@@ -347,7 +347,7 @@ Returns `false` for any other input, even `null`.
 * `string` **`key`**: The key of the property to parse.
 
 
-## `GTFSPropertyCollection.GetColor(string, Color?)`
+## `GTFSPropertyCollection.GetColor(string, [Color?])`
 `Color`: Returns a `Color`.
 
 To be a valid color, the input must be a six-hex digit code, *without* the leading `#` sign.
@@ -355,13 +355,13 @@ To be a valid color, the input must be a six-hex digit code, *without* the leadi
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `Color?` **`def`** (default `null`): Default to use if the input isn't a valid color.
+* `Color?` **`def`** (optional): Default to use if the input isn't a valid color.
 
 ### Exceptions
 * `ArgumentException`: `input` is not a valid color, and no default is provided.
 
 
-## `GTFSPropertyCollection.GetDate(string, LocalDate?)`
+## `GTFSPropertyCollection.GetDate(string, [LocalDate?])`
 `LocalDate`: Returns a `LocalDate`.
 
 To be a valid date, the input must be in `YYYYMMDD` format, with no separators between the components.
@@ -369,55 +369,55 @@ To be a valid date, the input must be in `YYYYMMDD` format, with no separators b
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `LocalDate?` **`def`** (default `null`): Default to use if the input isn't a valid date.
+* `LocalDate?` **`def`** (optional): Default to use if the input isn't a valid date.
 
 ### Exceptions
 * `Exception`: `input` is not a valid date, and no default is provided.
 
 
-## `GTFSPropertyCollection.GetDecimal(string, decimal?)`
+## `GTFSPropertyCollection.GetDecimal(string, [decimal?])`
 `decimal`: Returns a `decimal`.
 
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `decimal?` **`def`** (default `null`): Default to use if the input isn't a valid number.
+* `decimal?` **`def`** (optional): Default to use if the input isn't a valid number.
 
 ### Exceptions
 * `ArgumentException`: `input` is not a valid number, and no default is provided.
 
 
-## `GTFSPropertyCollection.GetDouble(string, double?)`
+## `GTFSPropertyCollection.GetDouble(string, [double?])`
 `double`: Returns a `double`.
 
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `double?` **`def`** (default `null`): Default to use if the input isn't a valid number.
+* `double?` **`def`** (optional): Default to use if the input isn't a valid number.
 
 ### Exceptions
 * `ArgumentException`: `input` is not a valid number, and no default is provided.
 
 
-## `GTFSPropertyCollection.GetDuration(string, Duration?)`
+## `GTFSPropertyCollection.GetDuration(string, [Duration?])`
 `Duration`: Returns a `Duration`.
 
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `Duration?` **`def`** (default `null`): Default to use if the input isn't a valid duration.
+* `Duration?` **`def`** (optional): Default to use if the input isn't a valid duration.
 
 ### Exceptions
 * `ArgumentException`: `input` is not a valid duration, and no default is provided.
 
 
-## `GTFSPropertyCollection.GetInt(string, Int?)`
+## `GTFSPropertyCollection.GetInt(string, [int?])`
 `int`: Returns an `int`.
 
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `int?` **`def`** (default `null`): Default to use if the input isn't a valid number.
+* `int?` **`def`** (optional): Default to use if the input isn't a valid number.
 
 ### Exceptions
 * `ArgumentException`: `input` is not a valid number, and no default is provided.
@@ -519,7 +519,7 @@ To be a valid time, the input must be in `H:mm:ss` or `HH:mm:ss` format.
 * `string` **`key`**: The key of the property to parse.
 
 
-## `GTFSPropertyCollection.GetTime(string, Duration?)`
+## `GTFSPropertyCollection.GetTime(string, [Duration?])`
 `Duration`: Returns a `Duration`.
 
 To be a valid time, the input must be in `H:mm:ss` or `HH:mm:ss` format.
@@ -527,7 +527,7 @@ To be a valid time, the input must be in `H:mm:ss` or `HH:mm:ss` format.
 ### Parameters
 * this `GTFSPropertyCollection` **`properties`**: The property collection to parse from.
 * `string` **`key`**: The key of the property to parse.
-* `Duration?` **`def`** (default `null`): The default to use if the input isn't a valid time.
+* `Duration?` **`def`** (optional): The default to use if the input isn't a valid time.
 
 ### Exceptions
 * `Exception`: `input` is not a valid time.

@@ -9,7 +9,7 @@ A collection of all the `Calendar`s and `CalendarDate`s from within a GTFS feed.
 
 - [Summary](#summary)
 - [Constructors](#constructors)
-  - [`GTFSCalendarCollection(IGTFSDataSource, string, string)`](#gtfscalendarcollectionigtfsdatasource-string-string)
+  - [`GTFSCalendarCollection(IGTFSDataSource, [string, string])`](#gtfscalendarcollectionigtfsdatasource-string-string)
 - [Properties](#properties)
   - [`CalendarDates`](#calendardates)
   - [`Calendars`](#calendars)
@@ -26,13 +26,13 @@ A collection of all the `Calendar`s and `CalendarDate`s from within a GTFS feed.
 # Constructors
 
 
-## `GTFSCalendarCollection(IGTFSDataSource, string, string)`
+## `GTFSCalendarCollection(IGTFSDataSource, [string, string])`
 Creates a `GTFSCalendarCollection` from a given `IGTFSDataSource` and the given table names.
 
 ### Parameters
 * `IGTFSDataSource` **`source`**: The GTFS data source to use for this collection.
-* `string` **`calendarTable`** (default `"calendar"`): The name of the calendar table from this source.
-* `string` **`calendarDatesTable`** (default `"calendar_dates"`): The name of the calendar dates table from this source.
+* `string` **`calendarTable`** (optional): The name of the calendar table from this source.
+* `string` **`calendarDatesTable`** (optional): The name of the calendar dates table from this source.
 
 
 

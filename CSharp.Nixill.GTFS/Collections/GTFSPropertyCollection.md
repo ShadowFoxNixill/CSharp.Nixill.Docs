@@ -9,8 +9,8 @@ A collection of keys and values specified for a given GTFS Entity, representing 
 - [Summary](#summary)
 - [Remarks](#remarks)
 - [Constructors](#constructors)
-  - [`GTFSPropertyCollection(IDictionary<string, string>, string)`](#gtfspropertycollectionidictionarystring-string-string)
-  - [`GTFSPropertyCollection(IEnumerable<(string, string)>, string)`](#gtfspropertycollectionienumerablestring-string-string)
+  - [`GTFSPropertyCollection(IDictionary<string, string>, [string])`](#gtfspropertycollectionidictionarystring-string-string)
+  - [`GTFSPropertyCollection(IEnumerable<(string, string)>, [string])`](#gtfspropertycollectionienumerablestring-string-string)
 - [Properties](#properties)
   - [`Count`](#count)
   - [`Keys`](#keys)
@@ -32,20 +32,20 @@ This class is similar to a read-only `Dictionary<string, string>`, except that v
 
 # Constructors
 
-## `GTFSPropertyCollection(IDictionary<string, string>, string)`
+## `GTFSPropertyCollection(IDictionary<string, string>, [string])`
 Creates a new `GTFSPropertyCollection` from a dictionary of keys and values.
 
 ### Parameters
 * `IDictionary<string, string>` **`input`**: The dictionary to use.
-* `string` **`agencyID`** (default `null`): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
+* `string` **`agencyID`** (optional): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
 
 
-## `GTFSPropertyCollection(IEnumerable<(string, string)>, string)`
+## `GTFSPropertyCollection(IEnumerable<(string, string)>, [string])`
 Creates a new `GTFSPropertyCollection` from an enumerable set of two-string tuples.
 
 ### Parameters
 * `IEnumerable<(string, string)>` **`input`**: The keys and values to use.
-* `string` **`agencyID`** (default `null`): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
+* `string` **`agencyID`** (optional): The default `agency_id` to use. If specified, and there's no `agency_id` key in the input, this value will be used for that key.
 
 
 
