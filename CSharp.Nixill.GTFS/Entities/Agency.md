@@ -7,6 +7,8 @@ Represents a transit agency from the feed.
 
 - [Summary](#summary)
 - [Remarks](#remarks)
+- [Constructors](#constructors)
+  - [`Agency(GTFSPropertyCollection)`](#agencygtfspropertycollection)
 - [Properties](#properties)
   - [`Email`](#email)
   - [`FareUrl`](#fareurl)
@@ -27,6 +29,17 @@ Represents a transit agency from the feed.
 The ID of an <c>Agency</c> is its <c>agency_id</c>. As stated in the [GTFS documentation](gtfs.org/reference/static#agencytxt) (slightly modified for grammar):
 
 > Identifies a transit brand, which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This document uses the term "agency" in place of "brand". A dataset may contain data from multiple agencies. This field is required when the dataset contains data for multiple transit agencies, otherwise it is optional.
+
+
+
+# Constructors
+
+
+## `Agency(GTFSPropertyCollection)`
+Creates a new `Agency` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

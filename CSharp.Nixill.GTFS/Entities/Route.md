@@ -6,6 +6,8 @@ public abstract class Route : GTFSIdentifiedEntity
 Represents a single transit route within a GTFS feed.
 
 - [Summary](#summary)
+- [Constructors](#constructors)
+  - [`Route(GTFSPropertyCollection)`](#routegtfspropertycollection)
 - [Properties](#properties)
   - [`AgencyID`](#agencyid)
   - [`ContinuousDropoff`](#continuousdropoff)
@@ -23,6 +25,17 @@ Represents a single transit route within a GTFS feed.
   - [`Properties` (protected)](#properties-protected)
 - [Methods](#methods)
   - [`GetFactory(string)` (static)](#getfactorystring-static)
+
+
+
+# Constructors
+
+
+## `Route(GTFSPropertyCollection)`
+Creates a new `Route` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

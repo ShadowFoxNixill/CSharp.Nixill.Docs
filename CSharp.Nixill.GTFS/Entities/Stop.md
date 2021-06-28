@@ -7,6 +7,8 @@ A key location in a GTFS feed, such as a transit stop, station or station entran
 
 - [Summary](#summary)
 - [Remarks](#remarks)
+- [Constructors](#constructors)
+  - [`Stop(GTFSPropertyCollection)`](#stopgtfspropertycollection)
 - [Properties](#properties)
   - [`Description`](#description)
   - [`ID`](#id)
@@ -31,6 +33,17 @@ A key location in a GTFS feed, such as a transit stop, station or station entran
 
 # Remarks
 The term "station entrance" refers to both station entrances and station exits. Stops, station or station entrances are collectively referred to as locations. Multiple routes may use the same stop.
+
+
+
+# Constructors
+
+
+## `Stop(GTFSPropertyCollection)`
+Creates a new `Stop` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

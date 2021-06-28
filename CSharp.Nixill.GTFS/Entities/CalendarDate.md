@@ -6,6 +6,8 @@ public class CalendarDate : GTFSTwoPartEntity<string, LocalDate>
 Represents a single exception to a `Calendar`'s defined service days.
 
 - [Summary](#summary)
+- [Constructors](#constructors)
+  - [`CalendarDate(GTFSPropertyCollection)`](#calendardategtfspropertycollection)
 - [Properties](#properties)
   - [`Date`](#date)
   - [`ExceptionType`](#exceptiontype)
@@ -18,6 +20,17 @@ Represents a single exception to a `Calendar`'s defined service days.
   - [`Properties` (protected)](#properties-protected)
 - [Methods](#methods)
   - [`Factory(IEnumerable<(string, string)>)` (static)](#factoryienumerablestring-string-static)
+
+
+
+# Constructors
+
+
+## `CalendarDate(GTFSPropertyCollection)`
+Creates a new `CalendarDate` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

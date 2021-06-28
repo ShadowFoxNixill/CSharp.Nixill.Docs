@@ -6,6 +6,8 @@ public abstract class FareAttribute : GTFSIdentifiedEntity
 A single fare class for riders. Can stand alone if it's the fare paid for all trips, or used in conjunction with `FareRule`s if there are more rules applied.
 
 - [Summary](#summary)
+- [Constructors](#constructors)
+  - [`FareAttribute(GTFSPropertyCollection)`](#fareattributegtfspropertycollection)
 - [Properties](#properties)
   - [`AgencyID`](#agencyid)
   - [`CurrencyType`](#currencytype)
@@ -16,6 +18,17 @@ A single fare class for riders. Can stand alone if it's the fare paid for all tr
   - [`TransferDuration`](#transferduration)
   - [`Transfers`](#transfers)
   - [`Properties` (protected)](#properties-protected)
+
+
+
+# Constructors
+
+
+## `FareAttribute(GTFSPropertyCollection)`
+Creates a new `FareAttribute` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

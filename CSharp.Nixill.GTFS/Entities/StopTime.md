@@ -6,6 +6,8 @@ public abstract class StopTime : GTFSOrderedEntity
 Represents a single instance of a trip serving a stop.
 
 - [Summary](#summary)
+- [Constructors](#constructors)
+  - [`StopTime(GTFSPropertyCollection)`](#stoptimegtfspropertycollection)
 - [Properties](#properties)
   - [`ArrivalTime`](#arrivaltime)
   - [`ContinuousDropoff`](#continuousdropoff)
@@ -27,6 +29,17 @@ Represents a single instance of a trip serving a stop.
   - [`Properties` (protected)](#properties-protected)
 - [Methods](#methods)
   - [`Factory(IEnumerable<(string, string)>)` (static)](#factoryienumerablestring-string-static)
+
+
+
+# Constructors
+
+
+## `StopTime(GTFSPropertyCollection)`
+Creates a new `StopTime` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

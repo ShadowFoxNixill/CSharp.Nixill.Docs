@@ -6,6 +6,8 @@ public class Calendar : GTFSIdentifiedEntity
 A `Calendar` is a set of dates when service is available for one or more routes.
 
 - [Summary](#summary)
+- [Constructors](#constructors)
+  - [`Calendar(GTFSPropertyCollection)`](#calendargtfspropertycollection)
 - [Properties](#properties)
   - [`EndDate`](#enddate)
   - [`Friday`](#friday)
@@ -25,6 +27,17 @@ A `Calendar` is a set of dates when service is available for one or more routes.
   - [`ServiceOn(LocalDate)`](#serviceonlocaldate)
   - [`ServiceOnDayOfWeek(IsoDayOfWeek)`](#serviceondayofweekisodayofweek)
   - [`Factory(IEnumerable<(string, string)>)` (static)](#factoryienumerablestring-string-static)
+
+
+
+# Constructors
+
+
+## `Calendar(GTFSPropertyCollection)`
+Creates a new `Calendar` from the given properties.
+
+### Parameters
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 

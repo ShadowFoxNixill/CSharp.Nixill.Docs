@@ -7,7 +7,7 @@ Defines a single trip of a transit route within a GTFS feed.
 
 - [Summary](#summary)
 - [Constructors](#constructors)
-  - [`GTFSIdentifiedEntity(GTFSPropertyCollection, string)` (protected)](#gtfsidentifiedentitygtfspropertycollection-string-protected)
+  - [`Trip(GTFSPropertyCollection)`](#tripgtfspropertycollection)
 - [Properties](#properties)
   - [`BikesAllowed`](#bikesallowed)
   - [`BlockID`](#blockid)
@@ -29,12 +29,11 @@ Defines a single trip of a transit route within a GTFS feed.
 # Constructors
 
 
-## `GTFSIdentifiedEntity(GTFSPropertyCollection, string)` (protected)
-Creates a `GTFSIdentifiedEntity`.
+## `Trip(GTFSPropertyCollection)`
+Creates a new `Trip` from the given properties.
 
 ### Parameters
-* `GTFSPropertyCollection` **`properties`**: The entity's collection of properties.
-* `string` **`idName`**: The key of the property that identifies this entity.
+* `GTFSPropertyCollection` **`properties`**: The properties to use.
 
 
 
