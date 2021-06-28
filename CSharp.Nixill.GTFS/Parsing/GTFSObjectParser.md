@@ -13,6 +13,21 @@ Utility class to convert string values to other data types.
   - [`TimePattern`](#timepattern)
   - [`TimeRegex`](#timeregex)
 - [Methods (static)](#methods-static)
+  - [`AssertBool(string, string)`](#assertboolstring-string)
+  - [`AssertColor(string, string)`](#assertcolorstring-string)
+  - [`AssertDate(string, string)`](#assertdatestring-string)
+  - [`AssertDecimal(string, string)`](#assertdecimalstring-string)
+  - [`AssertDouble(string, string)`](#assertdoublestring-string)
+  - [`AssertDuration(string, string)`](#assertdurationstring-string)
+  - [`AssertExists(string, string)`](#assertexistsstring-string)
+  - [`AssertForeignKey<T>(string, string, GTFSOrderedEntityCollection<T>)`](#assertforeignkeytstring-string-gtfsorderedentitycollectiont)
+  - [`AssertForeignKey<T>(string, string, IDEntityCollection<T>)`](#assertforeignkeytstring-string-identitycollectiont)
+  - [`AssertInt(string, string)`](#assertintstring-string)
+  - [`AssertNonNegativeDecimal(string, string)`](#assertnonnegativedecimalstring-string)
+  - [`AssertNonNegativeDouble(string, string)`](#assertnonnegativedoublestring-string)
+  - [`AssertNonNegativeInt(string, string)`](#assertnonnegativeintstring-string)
+  - [`AssertTime(string, string)`](#asserttimestring-string)
+  - [`AssertTimeZone(string, string)`](#asserttimezonestring-string)
   - [`GetBool(string)`](#getboolstring)
   - [`GetColor(string, [Color?])`](#getcolorstring-color)
   - [`GetDate(string, [LocalDate?])`](#getdatestring-localdate)
@@ -42,6 +57,21 @@ Utility class to convert string values to other data types.
   - [`IsNonNegativeInt(string)`](#isnonnegativeintstring)
   - [`IsTime(string)`](#istimestring)
 - [Extension methods to `GTFSPropertyCollection`](#extension-methods-to-gtfspropertycollection)
+  - [`GTFSPropertyCollection.AssertBool(string)`](#gtfspropertycollectionassertboolstring)
+  - [`GTFSPropertyCollection.AssertColor(string)`](#gtfspropertycollectionassertcolorstring)
+  - [`GTFSPropertyCollection.AssertDate(string)`](#gtfspropertycollectionassertdatestring)
+  - [`GTFSPropertyCollection.AssertDecimal(string)`](#gtfspropertycollectionassertdecimalstring)
+  - [`GTFSPropertyCollection.AssertDouble(string)`](#gtfspropertycollectionassertdoublestring)
+  - [`GTFSPropertyCollection.AssertDuration(string)`](#gtfspropertycollectionassertdurationstring)
+  - [`GTFSPropertyCollection.AssertExists(string)`](#gtfspropertycollectionassertexistsstring)
+  - [`GTFSPropertyCollection.AssertForeignKey<T>(string, GTFSOrderedEntityCollection<T>)`](#gtfspropertycollectionassertforeignkeytstring-gtfsorderedentitycollectiont)
+  - [`GTFSPropertyCollection.AssertForeignKey<T>(string, IDEntityCollection<T>)`](#gtfspropertycollectionassertforeignkeytstring-identitycollectiont)
+  - [`GTFSPropertyCollection.AssertInt(string)`](#gtfspropertycollectionassertintstring)
+  - [`GTFSPropertyCollection.AssertNonNegativeDecimal(string)`](#gtfspropertycollectionassertnonnegativedecimalstring)
+  - [`GTFSPropertyCollection.AssertNonNegativeDouble(string)`](#gtfspropertycollectionassertnonnegativedoublestring)
+  - [`GTFSPropertyCollection.AssertNonNegativeInt(string)`](#gtfspropertycollectionassertnonnegativeintstring)
+  - [`GTFSPropertyCollection.AssertTime(string)`](#gtfspropertycollectionasserttimestring)
+  - [`GTFSPropertyCollection.AssertTimeZone(string)`](#gtfspropertycollectionasserttimezonestring)
   - [`GTFSPropertyCollection.GetBool(string)`](#gtfspropertycollectiongetboolstring)
   - [`GTFSPropertyCollection.GetColor(string, [Color?])`](#gtfspropertycollectiongetcolorstring-color)
   - [`GTFSPropertyCollection.GetDate(string, [LocalDate?])`](#gtfspropertycollectiongetdatestring-localdate)
@@ -101,6 +131,205 @@ Read-only `Regex`: Regex used to validate times: `^\d+:\d\d:\d\d$`
 
 
 # Methods (static)
+
+
+## `AssertBool(string, string)`
+`void`: Asserts that the input is a valid boolean (only `0` or `1`).
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid boolean.
+
+
+## `AssertColor(string, string)`
+`void`: Asserts that the input is a valid color.
+
+To be a valid color, the input must be a six-hex digit code, *without* the leading `#` sign.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid color.
+
+
+## `AssertDate(string, string)`
+`void`: Asserts that the input is a valid date.
+
+To be a valid date, the input must be in `YYYYMMDD` format, with no separators between the components.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid date.
+
+
+## `AssertDecimal(string, string)`
+`void`: Asserts that the input is a valid decimal.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid decimal.
+
+
+## `AssertDouble(string, string)`
+`void`: Asserts that the input is a valid double.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid double.
+
+
+## `AssertDuration(string, string)`
+`void`: Asserts that the input is a valid duration.
+
+To be a valid duration, the input must be a non-negative number of seconds.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyRangeException`: `input` is a negative integer.
+* `PropertyTypeException`: `input` isn't a valid duration.
+
+
+## `AssertExists(string, string)`
+`void`: Asserts that the input exists.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+
+
+## `AssertForeignKey<T>(string, string, GTFSOrderedEntityCollection<T>)`
+`void`: Asserts that a collection contains a given ID.
+
+### Type parameters
+* **`T`** (: `GTFSIdentifiedEntity`): The type of entity contained by the collection.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+* `GTFSOrderedEntityCollection<T>` **`collection`**: The collection the ID should be within.
+
+### Exceptions
+* `PropertyNullException`: `input` is null. (Not thrown if `input` is an empty string and the collection has an empty string ID.)
+* `PropertyForeignKeyException`: `input` doesn't match an ID in `collection`.
+
+
+## `AssertForeignKey<T>(string, string, IDEntityCollection<T>)`
+`void`: Asserts that a collection contains a given ID.
+
+### Type parameters
+* **`T`** (: `GTFSIdentifiedEntity`): The type of entity contained by the collection.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+* `IDEntityCollection<T>` **`collection`**: The collection the ID should be within.
+
+### Exceptions
+* `PropertyNullException`: `input` is null. (Not thrown if `input` is an empty string and the collection has an empty string ID.)
+* `PropertyForeignKeyException`: `input` doesn't match an ID in `collection`.
+
+
+## `AssertInt(string, string)`
+`void`: Asserts that the input is a valid integer.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid integer.
+
+
+## `AssertNonNegativeDecimal(string, string)`
+`void`: Asserts that the input is a valid non-negative decimal.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid decimal.
+* `PropertyRangeException`: `input` is negative.
+
+
+## `AssertNonNegativeDouble(string, string)`
+`void`: Asserts that the input is a valid non-negative double.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid double.
+* `PropertyRangeException`: `input` is negative.
+
+
+## `AssertNonNegativeInt(string, string)`
+`void`: Asserts that the input is a valid non-negative integer.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid integer.
+* `PropertyRangeException`: `input` is negative.
+
+
+## `AssertTime(string, string)`
+`void`: Asserts that the input is a valid time.
+
+To be a valid time, the input must be in `H:mm:ss` format.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid time.
+
+
+## `AssertTimeZone(string, string)`
+`void`: Asserts that the input is a valid time zone.
+
+### Parameters
+* `string` **`input`**: The input to check.
+* `string` **`key`**: The property from which the input came.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid time zone.
 
 
 ## `GetBool(string)`
@@ -335,6 +564,205 @@ To be a valid time, the input must be in `H:mm:ss` or `HH:mm:ss` format.
 
 
 # Extension methods to `GTFSPropertyCollection`
+
+
+## `GTFSPropertyCollection.AssertBool(string)`
+`void`: Asserts that the input is a valid boolean (only `0` or `1`).
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid boolean.
+
+
+## `GTFSPropertyCollection.AssertColor(string)`
+`void`: Asserts that the input is a valid color.
+
+To be a valid color, the input must be a six-hex digit code, *without* the leading `#` sign.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid color.
+
+
+## `GTFSPropertyCollection.AssertDate(string)`
+`void`: Asserts that the input is a valid date.
+
+To be a valid date, the input must be in `YYYYMMDD` format, with no separators between the components.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid date.
+
+
+## `GTFSPropertyCollection.AssertDecimal(string)`
+`void`: Asserts that the input is a valid decimal.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid decimal.
+
+
+## `GTFSPropertyCollection.AssertDouble(string)`
+`void`: Asserts that the input is a valid double.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid double.
+
+
+## `GTFSPropertyCollection.AssertDuration(string)`
+`void`: Asserts that the input is a valid duration.
+
+To be a valid duration, the input must be a non-negative number of seconds.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyRangeException`: `input` is a negative integer.
+* `PropertyTypeException`: `input` isn't a valid duration.
+
+
+## `GTFSPropertyCollection.AssertExists(string)`
+`void`: Asserts that the input exists.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+
+
+## `GTFSPropertyCollection.AssertForeignKey<T>(string, GTFSOrderedEntityCollection<T>)`
+`void`: Asserts that a collection contains a given ID.
+
+### Type parameters
+* **`T`** (: `GTFSIdentifiedEntity`): The type of entity contained by the collection.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+* `GTFSOrderedEntityCollection<T>` **`collection`**: The collection the ID should be within.
+
+### Exceptions
+* `PropertyNullException`: `input` is null. (Not thrown if `input` is an empty string and the collection has an empty string ID.)
+* `PropertyForeignKeyException`: `input` doesn't match an ID in `collection`.
+
+
+## `GTFSPropertyCollection.AssertForeignKey<T>(string, IDEntityCollection<T>)`
+`void`: Asserts that a collection contains a given ID.
+
+### Type parameters
+* **`T`** (: `GTFSIdentifiedEntity`): The type of entity contained by the collection.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+* `IDEntityCollection<T>` **`collection`**: The collection the ID should be within.
+
+### Exceptions
+* `PropertyNullException`: `input` is null. (Not thrown if `input` is an empty string and the collection has an empty string ID.)
+* `PropertyForeignKeyException`: `input` doesn't match an ID in `collection`.
+
+
+## `GTFSPropertyCollection.AssertInt(string)`
+`void`: Asserts that the input is a valid integer.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid integer.
+
+
+## `GTFSPropertyCollection.AssertNonNegativeDecimal(string)`
+`void`: Asserts that the input is a valid non-negative decimal.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid decimal.
+* `PropertyRangeException`: `input` is negative.
+
+
+## `GTFSPropertyCollection.AssertNonNegativeDouble(string)`
+`void`: Asserts that the input is a valid non-negative double.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid double.
+* `PropertyRangeException`: `input` is negative.
+
+
+## `GTFSPropertyCollection.AssertNonNegativeInt(string)`
+`void`: Asserts that the input is a valid non-negative integer.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid integer.
+* `PropertyRangeException`: `input` is negative.
+
+
+## `GTFSPropertyCollection.AssertTime(string)`
+`void`: Asserts that the input is a valid time.
+
+To be a valid time, the input must be in `H:mm:ss` format.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid time.
+
+
+## `GTFSPropertyCollection.AssertTimeZone(string)`
+`void`: Asserts that the input is a valid time zone.
+
+### Parameters
+* this `GTFSPropertyCollection` **`properties`**: The property collection to check from.
+* `string` **`key`**: The key of the property to check.
+
+### Exceptions
+* `PropertyNullException`: `input` is null.
+* `PropertyTypeException`: `input` isn't a valid time zone.
 
 
 ## `GTFSPropertyCollection.GetBool(string)`
