@@ -1,5 +1,5 @@
 ```csharp
-public abstract class GTFSIdentifiedEntity : GTFSEntity
+public class GTFSIdentifiedEntity : GTFSEntity
 ```
 
 # Summary

@@ -1,5 +1,5 @@
 ```csharp
-public abstract class GTFSEntity
+public class GTFSEntity
 ```
 
 # Summary

@@ -1,5 +1,5 @@
 ```csharp
-public abstract class GTFSOrderedEntity : GTFSTwoPartEntity<string, int>
+public class GTFSOrderedEntity : GTFSTwoPartEntity<string, int>
 ```
 
 # Summary

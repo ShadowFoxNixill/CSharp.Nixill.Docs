@@ -1,5 +1,5 @@
 ```csharp
-public abstract class GTFSTwoPartEntity<TKey1, TKey2> : GTFSEntity
+public class GTFSTwoPartEntity<TKey1, TKey2> : GTFSEntity
 ```
 
 # Summary
