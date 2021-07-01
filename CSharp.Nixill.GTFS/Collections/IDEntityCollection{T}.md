@@ -6,7 +6,6 @@ public class IDEntityCollection<T> : IReadOnlyCollection<T> where T : GTFSIdenti
 A collection of `GTFSIdentifiedEntity`s, accessible by their IDs.
 
 - [Summary](#summary)
-- [Remarks](#remarks)
 - [Type Parameters](#type-parameters)
 - [Constructors](#constructors)
   - [`IDEntityCollection(IEnumerable<T>)`](#identitycollectionienumerablet)
@@ -20,10 +19,6 @@ A collection of `GTFSIdentifiedEntity`s, accessible by their IDs.
   - [`GetUnparsed()`](#getunparsed)
 - [Explicit Interface Implementations](#explicit-interface-implementations)
   - [`IEnumerable.GetEnumerator()`](#ienumerablegetenumerator)
-
-
-
-# Remarks
 
 
 
