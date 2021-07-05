@@ -5,6 +5,20 @@ public struct Color
 # Summary
 Represents a single color.
 
+- [Summary](#summary)
+- [Constructors](#constructors)
+  - [`Color()`](#color)
+  - [`Color(float, float, float)`](#colorfloat-float-float)
+  - [`Color(float, float, float, float)`](#colorfloat-float-float-float)
+- [Properties](#properties)
+  - [`Alpha`](#alpha)
+  - [`Blue`](#blue)
+  - [`Green`](#green)
+  - [`LinearBlue`](#linearblue)
+  - [`LinearGreen`](#lineargreen)
+  - [`LinearRed`](#linearred)
+  - [`Red`](#red)
+
 
 
 # Constructors
